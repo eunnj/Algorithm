@@ -5,17 +5,13 @@ import java.util.Stack;
 
 
 public class b_10828 {
-	
-	
-	
-	
+
 	public static void main(String[] args) {
 		
 		Scanner s= new Scanner(System.in);
+		Stack<Integer> stack = new Stack<Integer>();
 		
 		int N= s.nextInt();
-		
-		Stack<Integer> stack = new Stack<Integer>();
 		
 		for(int i=0;i<N;i++) {
 			String order=s.next();
@@ -26,19 +22,19 @@ public class b_10828 {
 				 stack.push(x);
 				break;
 			case "pop":
-				if(stack.isEmpty()) System.out.print(-1);
-				else  System.out.print(stack.pop());
+				if(stack.isEmpty()) System.out.println(-1);
+				else  System.out.println(stack.pop());
 				break;
 			case "size":
-				 System.out.print(stack.size());
+				 System.out.println(stack.size());
 				break;
 			case "top":
-				if(stack.isEmpty()) System.out.print(-1);
-				else  System.out.print(stack.peek());
+				if(stack.isEmpty()) System.out.println(-1);
+				else  System.out.println(stack.peek());
 				break;
 			case "empty":
-				if(stack.isEmpty()) System.out.print(1);
-				else  System.out.print(0);
+				if(stack.isEmpty()) System.out.println(1);
+				else  System.out.println(0);
 				break;
 			}
 		}
