@@ -8,26 +8,25 @@ public class b_1463 {
 		Scanner s= new Scanner(System.in);
 		
 		int N = s.nextInt();
-		int cnt = 0;
-		int min = 100000000; 
+		int dp[]= new int[N+1];
 		
-		while(N==1) {
+		dp[0]=0; dp[1]=0; //√ ±‚»≠
+		
+		
+		for(int i=2;i<=N;i++) {
 			
-			if(N/3==0) {
-				N/=3;
-				
+			if(i/3==0 && i/2==0) {
+				dp[i] = Math.min(dp[i/3], Math.min(dp[i-1], dp[i-2]))+1;
 			}
-			if(N/2==0) {
-				N/=2;
-				
+			else if(i%3==0) {
+				dp[i]=Math.min(dp[i/3],dp[i-1])+1;
+			}else if(i%2==0) {
+				dp[i]=Math.min(dp[i/2], dp[i-1])+1;
+			}else {
+				dp[i]=dp[i-1]+1;
 			}
-			if(N>1) {
-				N-=1;
-				
-			}
-			cnt++;
-			
 		}
 		
+		System.out.println(dp[N]);
 	}
 }
