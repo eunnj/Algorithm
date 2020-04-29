@@ -7,7 +7,7 @@ public class baek_1149 {
 		Scanner s = new Scanner(System.in);
 		
 		int N = s.nextInt(); //ÁıÀÇ ¼ö
-		int dp[][] = new int[3][N];
+		int dp[][] = new int[N][3];
 		
 		for(int i=0;i<N;i++) { 
 			for(int j=0;j<3;j++) {//RGB
@@ -22,12 +22,8 @@ public class baek_1149 {
 			 dp[i][2] += Math.min(dp[i-1][0], dp[i-1][1]);
 		}
 		
-		int min = 100000;
-		
-		for(int i=0;i<3;i++) {
-			min = Math.min(min, dp[N-1][i]);
-		}
-		
+		int min = Math.min(Math.min(dp[N-1][0], dp[N-1][1]), dp[N-1][2]);
+		  
 		System.out.println(min);
 
 	}
