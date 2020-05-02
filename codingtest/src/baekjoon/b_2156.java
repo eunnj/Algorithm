@@ -16,14 +16,15 @@ public static void main(String args[]) {
 			 arr[i] = s.nextInt();
 		}
 		
-		 
+		
+		dp[0]=0;
 		dp[1] = arr[1];
-		dp[2] = dp[1] + arr[2];
-
+		
+		if(N>1) dp[2] = arr[1] + arr[2];
 
 		for(int i=3 ;i<=N;i++) {
 			dp[i] = Math.max(dp[i-2]+arr[i],dp[i-3]+arr[i-1]+arr[i]); //마지막 i잔을 마셨을 경우
-			dp[i] = Math.max(dp[i-1], dp[i]); //포도주를 두 번 연속 안먹었을 경우
+			dp[i] = Math.max(dp[i-1], dp[i]); //포도주를 두 번 연속 안먹었을 경우, 마지막 잔 포도주를 마시지 않았을 경우
 			
 		}
 		
