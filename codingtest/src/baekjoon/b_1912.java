@@ -9,18 +9,19 @@ public class b_1912 {
 		
 		int N = s.nextInt();
 		
-		int arr[]= new int[N+1];
-		int dp[]= new int[N+1];
+		int arr[]= new int[N];
+		int dp[]= new int[N];
 		
-		for(int i=1;i<=N;i++) {
+		for(int i=0;i<N;i++) {
 			arr[i]=s.nextInt();
 		}
 		
-		int max = dp[1];
+		dp[0]=arr[0];
+		int max=dp[0];
 		
-		
-		for(int i=1;i<=N;i++) {
-			dp[i] += Math.max(max, arr[i]);
+		for(int i=1;i<N;i++) {
+			dp[i]=Math.max(dp[i-1]+arr[i], arr[i]);
+			max=Math.max(max, dp[i]);
 		}
 		
 		
