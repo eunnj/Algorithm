@@ -7,7 +7,7 @@ import java.util.Stack;
 public class b_10828 {
 
 	public static void main(String[] args) {
-		
+		//https://www.acmicpc.net/problem/10828
 		Scanner s= new Scanner(System.in);
 		Stack<Integer> stack = new Stack<Integer>();
 		
