@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class b_10845 {
 	public static void main(String[] args) {
+		// https://www.acmicpc.net/problem/10845
 		Scanner s= new Scanner(System.in);
 		int back=0;
 		Queue<Integer> que = new LinkedList<Integer>();
