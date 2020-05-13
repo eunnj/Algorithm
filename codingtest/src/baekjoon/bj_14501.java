@@ -13,15 +13,19 @@ public class bj_14501 {
 		
 		for(int i=1;i<=N;i++) {
 			time[i]=s.nextInt();
-			pay[i]=s.nextInt();
+			dp[i]=s.nextInt();
 		}
 		for(int i=1;i<=N;i++) {
 			int index=i+time[i];
 			
 			while(index<N) {
-				dp[i]+=pay[index];
+				dp[i]+=dp[index];
 				index+=time[index];
 			}
+			
+			if(index>N)
+				dp[i]=0;
+			
 			max=Math.max(max, dp[i]);
 		}
 		
