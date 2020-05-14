@@ -18,8 +18,10 @@ public class bj_1932 {
 		
 		for(int i=1;i<=N;i++) {
 			for(int j=1;j<=i;j++) {
-				if(j==1||j==i)
-					dp[i][j]+=dp[i-1][j];
+				if(j==1)
+					dp[i][j]+=dp[i-1][1];
+				else if (j==i)
+					dp[i][j]+=dp[i-1][j-1];
 				else
 					dp[i][j]+=Math.max(dp[i-1][j-1], dp[i-1][j]);
 			}
