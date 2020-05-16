@@ -8,30 +8,24 @@ public class bj_14501 {
 		int N = s.nextInt();
 		int time[] = new int[N+1];
 		int pay[] = new int[N+1];
-		int dp[] = new int[N+1];
-		int max=0;
-		
+		int dp[] = new int[N+2];
+	
 		for(int i=1;i<=N;i++) {
 			time[i]=s.nextInt();
-			dp[i]=s.nextInt();
-		}
-		for(int i=1;i<=N;i++) {
-			int index=i+time[i];
-			
-			while(index<N) {
-				dp[i]+=dp[index];
-				index+=time[index];
-			}
-			
-			if(index>N)
-				dp[i]=0;
-			
-			max=Math.max(max, dp[i]);
+			pay[i]=s.nextInt();
 		}
 		
-		for(int i=1;i<=N;i++) {
-
-			System.out.println(dp[i]);
+		for(int i=N;i>0;i--) {
+			int index=i+time[i];
+			
+			if(index >N+1) 
+				dp[i]=dp[i+1];
+			else
+				dp[i]=Math.max(dp[i+1],pay[i]+dp[index]);
+			
 		}
+		
+			System.out.println(dp[1]);
+		
 	}
 }
