@@ -19,16 +19,17 @@ public class bj_1890 {
 		
 		for(int i=1;i<=N;i++) {
 			for(int j=1;j<=N;j++) {
-				int r_next = j + graph[i][j]; 
-				int l_next = i + graph[i][j];
+				if (i == N && j == N && graph[i][j]==0) break; //종착점에선 계산하지 않는다.
+				else {        
+				int right = j + graph[i][j]; 
+				int down = i + graph[i][j];
 				
-				if(r_next<=N) dp[i][r_next]+=1;
-				if(l_next<=N) dp[l_next][j]+=1;
+				if(right<=N) dp[i][right]+=dp[i][j];
+				if(down<=N) dp[down][j]+=dp[i][j];
+				}
 			}
 		}
-			
-		for(int i=1;i<=N;i++) 
-			for(int j=1;j<=N;j++) 
-				System.out.println(dp[i][j]);
+		
+			System.out.println(dp[N][N]);
 	}
 }
