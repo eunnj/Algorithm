@@ -8,8 +8,8 @@ public class bj_1890 {
 		
 		int N = s. nextInt(); //게임판의 크기
 		int graph[][] = new int[N+1][N+1]; //게임판
-		int dp[][] = new int[N+1][N+1]; //경로의 수
-		
+		long dp[][] = new long[N+1][N+1]; //경로의 수
+		 // 경로의 개수가 2^63 -1개이기 때문에  dp 배열을 long 형태
 		
 		for(int i=1;i<=N;i++) 
 			for(int j=1;j<=N;j++) 
@@ -19,7 +19,7 @@ public class bj_1890 {
 		
 		for(int i=1;i<=N;i++) {
 			for(int j=1;j<=N;j++) {
-				if (i == N && j == N && graph[i][j]==0) break; //종착점에선 계산하지 않는다.
+				if ((i == N && j == N) && graph[i][j]==0) break; //종착점에선 계산하지 않는다.
 				else {        
 				int right = j + graph[i][j]; 
 				int down = i + graph[i][j];
