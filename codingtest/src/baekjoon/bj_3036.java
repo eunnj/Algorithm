@@ -11,7 +11,7 @@ public class bj_3036 {
 		for(int i=0;i<N-1;i++) {
 			int rad = s.nextInt();
 			int gcd = gcd(first,rad);
-			System.out.print(first/gcd+"/"+rad/gcd);
+			System.out.println(first/gcd+"/"+rad/gcd);
 		}
 		
 		

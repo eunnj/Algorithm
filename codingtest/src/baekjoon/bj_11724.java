@@ -14,7 +14,7 @@ public class bj_11724 {
 		
 		int N = s.nextInt(); //정점의 개수
 		int M = s.nextInt(); //간선의 개수
-		int cnt=0; //연결 요소 개수
+		int cnt=0; //연결 요소 수
 		
 		
 		check =new boolean[N+1];
