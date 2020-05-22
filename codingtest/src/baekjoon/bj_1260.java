@@ -50,6 +50,7 @@ public class bj_1260 {
 
 	}
 	
+	//깊이 우선
 	public static void dfs(int v) {
 		Stack<Integer> stack=new Stack<Integer>();
 		stack.push(v);
@@ -72,6 +73,7 @@ public class bj_1260 {
 		
 	}
 	
+	//너비 우선
 	public static void bfs(int v) {
 		Queue<Integer> que = new LinkedList();
 		que.add(v); //시작점
