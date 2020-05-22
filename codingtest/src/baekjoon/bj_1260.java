@@ -41,7 +41,7 @@ public class bj_1260 {
 		dfs(V);
 		System.out.println();
 		
-		//초기화
+		//방문 체크 베열 초기화
 		for(int i=1; i<=N; i++) {
 			check[i]=false;
 		}
