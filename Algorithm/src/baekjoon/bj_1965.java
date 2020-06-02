@@ -16,20 +16,19 @@ public class bj_1965 {
 		
 		for(int i=1;i<=N;i++) {
 			size[i]=s.nextInt();
-			dp[i] = 1;
+			dp[i] = 1; //ÃÊ±âÈ­
 		}
 		
-		dp[1]=1;
-		
+	
 		for(int i=1;i<=N;i++) {
 			for (int j = 1; j <= i; j++) {
 				if (size[j] < size[i]) dp[i] = Math.max(dp[i], dp[j] + 1); 
 			}
-			  max = Math.max(max, dp[i]);
-}
+			 max = Math.max(max, dp[i]);
+		}
 		
 		
 
 		System.out.println(max);
-		}
+	}
 }
