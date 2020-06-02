@@ -4,29 +4,32 @@ import java.util.Scanner;
 
 public class bj_1965 {
 	public static void main(String[] args ) {
+		// LIS 
 		Scanner s= new Scanner(System.in);
 		
 		int N = s.nextInt();
 		
-		int size[] = new int[N+2];
-		int dp[] = new int[N+2];
+		int size[] = new int[N+1];
+		int dp[] = new int[N+1];
 		
 		int max=0;
 		
 		for(int i=1;i<=N;i++) {
 			size[i]=s.nextInt();
+			dp[i] = 1;
 		}
 		
-		for(int i=N;i>=1;i--) {
-			for(int j=N;j>=1;j--) {
-				if(size[j]>=size[j-1]) dp[i]++;
-				
-				if(dp[i]>dp[i+1]) max = dp[i];
-				else max = dp[i+1];
-			
+		dp[1]=1;
+		
+		for(int i=1;i<=N;i++) {
+			for (int j = 1; j <= i; j++) {
+				if (size[j] < size[i]) dp[i] = Math.max(dp[i], dp[j] + 1); 
 			}
-		}
+			  max = Math.max(max, dp[i]);
+}
 		
-		System.out.print(max);
-	}
+		
+
+		System.out.println(max);
+		}
 }
