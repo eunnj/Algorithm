@@ -16,20 +16,22 @@ public class baek_11053 {
 		
 		dp[1]=1;
 		
-
+		int num=dp[1];
 		for(int i=2;i<=N;i++) {
-			if(arr[i-1]<arr[i]) {
+			if(num<arr[i]) {
 				dp[i]=(dp[i-1]+1);
+				num=arr[i];
 			}
 			else dp[i]=dp[i-1];
+//			System.out.println(num);
 		}
 		
-		
-		for(int i=1; i<=N; i++) {
-			System.out.println(dp[i]);
-
-		}
+//		
+//		for(int i=1; i<=N; i++) {
+//			System.out.println(dp[i]);
+//
+//		}
 	
-		//System.out.println(dp[N]);
+		System.out.println(dp[N]);
 	}
 }
