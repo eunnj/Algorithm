@@ -12,11 +12,10 @@ public class bj_9095 {
 		//√ ±‚»≠
 		dp[1]=1; //1
 		dp[2]=2; //1+1,2
+		dp[3]=4;//1+1+1,2+1,1+2,3
 		
-		for(int i=3;i<12;i++) {
-			for(int j=1;j<i;j++) {
-				dp[i]+=dp[j];
-			}
+		for(int i=4;i<12;i++) {
+			dp[i]=dp[i-3]+dp[i-2]+dp[i-1];
 		}
 		
 		for(int i=0;i<T;i++) {
