@@ -20,7 +20,6 @@ public class Taketwo_andAdd {
 	        for(int i=0;i<answer.length; i++){
 	            answer[i] = list.get(i);
 	        }
-	    
 	        
 	        Arrays.sort(answer);
 	        
