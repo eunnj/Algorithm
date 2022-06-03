@@ -1,3 +1,4 @@
 /.metadata/
-./programmers/.settings
-./programmers/bin/
+.bin/
+.project
+.settings/
