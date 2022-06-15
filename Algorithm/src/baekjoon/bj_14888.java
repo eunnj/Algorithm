@@ -18,6 +18,5 @@ public class bj_14888 {
 			op[i] = s.nextInt();
 		}
 		
-		
 	}
 }
