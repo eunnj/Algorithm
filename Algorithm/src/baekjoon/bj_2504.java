@@ -13,38 +13,35 @@ public class bj_2504 {
 		for(int i=0;i<str.length();i++) {
 			char ch = str.charAt(i);
 			
-			switch(ch) {
-			case '(':
+			if(ch=='(') {
 				stack.push(ch);
 				ret*=2;
-				break;
-			case '[':
+			}else if(ch== '['){
 				stack.push(ch);
 				ret*=3;
-				break;
-			case ')':
+			}else if(ch==')') {
 				if(stack.isEmpty()||stack.peek()!='(') {
-					System.out.print(0);
-					return;
-				} else if (str.charAt(i - 1) == '(') {
-                    total += ret;
-                }
-                stack.pop();
-                ret /= 2;
-                break;
-			case ']':
+					total=0;
+					break;
+				}
+				if(str.charAt(i-1)=='(') {
+					total+=ret;
+				}
+				stack.pop();
+				ret/=2;
+			}else if(ch==']') {
 				if(stack.isEmpty()||stack.peek()!='[') {
-					System.out.print(0);
-					return;
-				} else if (str.charAt(i - 1) == '[') {
-                    total += ret;
-                }
-                stack.pop();
-                ret /= 3;
-                break;
+					total=0;
+					break;
+				}
+				if(str.charAt(i-1)=='[') {
+					total+=ret;
+				}
+				stack.pop();
+				ret/=3;
 			}
 			
 		}
-		System.out.print(total);
+		System.out.println(!stack.isEmpty() ? 0 : total);
 	}
 }
