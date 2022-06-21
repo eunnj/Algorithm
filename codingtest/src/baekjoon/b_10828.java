@@ -10,7 +10,6 @@ import java.util.Stack;
 public class b_10828 {
 
 	public static void main(String[] args) throws IOException{
-		Scanner s= new Scanner(System.in);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Stack<Integer> stack = new Stack();
 		int N = Integer.parseInt(br.readLine());
