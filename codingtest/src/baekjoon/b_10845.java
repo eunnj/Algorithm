@@ -1,45 +1,46 @@
 package baekjoon;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class b_10845 {
-	public static void main(String[] args) {
-		// https://www.acmicpc.net/problem/10845
-		Scanner s= new Scanner(System.in);
-		int back=0;
-		Queue<Integer> que = new LinkedList<Integer>();
+	public static void main(String[] args) throws IOException {
 		
-		int N= s.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Queue<Integer> queue = new LinkedList();
+		
+		int N = Integer.parseInt(br.readLine());
+		int back = 0;
 		
 		for(int i=0;i<N;i++) {
-			String order=s.next();
+			String[] str = br.readLine().split(" ");
 			
-			switch(order) {
+			switch(str[0]) {
 			case "push":
-				int x = s.nextInt();
-				back=x;
-				que.add(x);
+				back=Integer.parseInt(str[1]);
+				queue.add(back);
 				break;
 			case "pop":
-				if(que.isEmpty()) System.out.println(-1);
-				else System.out.println(que.poll());	
+				if(queue.isEmpty()) System.out.println("-1");
+				else System.out.println(queue.poll());
 				break;
 			case "size":
-				 System.out.println(que.size());
+				System.out.println(queue.size());
 				break;
 			case "empty":
-				if(que.isEmpty()) System.out.println(1);
-				else  System.out.println(0);
+				if(queue.isEmpty()) System.out.println("1");
+				else System.out.println("0");
 				break;
 			case "front":
-				if(que.isEmpty()) System.out.println(-1);
-				else System.out.println(que.peek()); //맨 앞 값 확인
+				if(queue.isEmpty()) System.out.println("-1");
+				else System.out.println(queue.peek());
 				break;
 			case "back":
-				if(que.isEmpty()) System.out.println(-1);
-				else  System.out.println(back);
+				if(queue.isEmpty()) System.out.println("-1");
+				else System.out.println(back);
 				break;
 			}
 		}
