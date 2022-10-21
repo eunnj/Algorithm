@@ -11,20 +11,14 @@ public class Main {
 		int N = Integer.parseInt(str[0]);
 		int K = Integer.parseInt(str[1]);
 		
-		int a=1;
-		int b=1;
-		
-		for(int i=K;i>1;i--) {
-			b*=i;
-		}
-		
-		while(K>0) {
-			a*=N;
-			N--;
-			K--;
-		}
+		int answer = factorial(N)/(factorial(N-K)*factorial(K));
 
-		System.out.print(a/b);
+		System.out.print(answer);
+	}
+	
+	public static int factorial(int n) {
+		if(n<=1) return 1;
+		else return n*factorial(n-1);
 	}
 	
 }
