@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,7 +19,7 @@ public class Main {
 		for(int i=0;i<K;i++)
 			arr[i]=Integer.parseInt(str_num[i]);
 		
-		// Arrays.sort(arr);
+		Arrays.sort(arr);
 		dfs(0);
 		System.out.println(ans);
 	
