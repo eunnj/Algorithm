@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Arrays;
 class Solution
 {
     public int solution(int []A, int []B)
@@ -9,9 +9,10 @@ class Solution
         Arrays.sort(B);
         
         for(int i=0;i<A.length;i++){
-            answer += A[i]*B[A.length-1-i];
+            answer += A[i]*B[B.length-i-1];
         }
 
+        
         return answer;
     }
 }
