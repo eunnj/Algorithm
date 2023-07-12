@@ -2,17 +2,17 @@ class Solution {
     public String solution(String s) {
         String answer = "";
         String str[] = s.split(" ");
-        int min=Integer.parseInt(str[0]);
-        int max=Integer.parseInt(str[0]);
+        int[] arr = new int[str.length];
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
         
-        
-        for(int i=0;i<str.length;i++){
-           int num = Integer.parseInt(str[i]);
-           min = Math.min(min,num);
-           max = Math.max(max,num);
+        for(int i=0;i<arr.length;i++){
+            arr[i]=Integer.parseInt(str[i]);
+            max = Math.max(max,arr[i]);
+            min = Math.min(min,arr[i]);
         }
         
-        answer = min+" "+max;
+        answer = min +" "+max;
         return answer;
     }
 }
