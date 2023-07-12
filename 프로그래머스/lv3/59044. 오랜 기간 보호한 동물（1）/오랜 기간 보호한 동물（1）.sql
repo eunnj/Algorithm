@@ -1,11 +1,7 @@
 -- 코드를 입력하세요
-SELECT * 
-FROM (
-    SELECT A.NAME,A.DATETIME
-    FROM ANIMAL_INS A
-    LEFT JOIN ANIMAL_OUTS B
-    ON A.ANIMAL_ID=B.ANIMAL_ID 
-    WHERE B.ANIMAL_ID IS NULL
-    ORDER BY A.DATETIME ASC
-    )
-WHERE ROWNUM <= 3;
+select a.name, a.datetime
+from animal_ins a
+left join animal_outs b on a.animal_id=b.animal_id
+where b.animal_id is null
+order by a.datetime asc
+limit 3;
